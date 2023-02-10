@@ -8,16 +8,11 @@ inputs:
 outputs:
   random-number:
     description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
+  github-path:
+    description: "Path of github action"
 runs:
-  using: "composite"
-  steps:
-    - run: echo Goodbye ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-      shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
-    - run: main.sh
-      shell: bash
+  using: 'docker'
+  image: 'dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+    - ${{ github.action_path }}
