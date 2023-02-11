@@ -8,12 +8,15 @@ inputs:
 outputs:
   random-number:
     description: "Random number"
-  github-path:
-    description: "Path of github action"
+  event-path:
+    description: "Path of event"
+  path:
+    description: "Path on the runner to the file that sets variables"    
 runs:
   using: 'docker'
   image: 'dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
-    - ${{ github.action_path }}
+    - ${{ github.event_path }}
+    - ${{ github.path }}
     
