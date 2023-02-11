@@ -10,6 +10,6 @@ outputs:
     description: "Random number"  
 runs:
   using: 'docker'
-  image: 'dockerfile'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
