@@ -17,5 +17,5 @@ runs:
   image: 'dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
-    - ${{ github.event_path }}
+    - ${{ github.event-path }}
     - ${{ github.path }}
