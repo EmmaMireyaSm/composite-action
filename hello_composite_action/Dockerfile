@@ -1,7 +1,11 @@
 FROM ubuntu:18.04
 
-COPY . /hello_composite_action
+ADD main.sh /usr/bin/main.sh
 
-RUN chmod +x /hello_composite_action/main.sh
+RUN chmod +x /usr/bin/main.sh
 
-ENTRYPOINT ["./hello_composite_action/main.sh"]
+RUN mkdir /app
+
+WORKDIR /app
+
+ENTRYPOINT ["/usr/bin/main.sh"]
