@@ -7,15 +7,9 @@ inputs:
     default: 'World'
 outputs:
   random-number:
-    description: "Random number"
-  event-path:
-    description: "Path of event"
-  path:
-    description: "Path on the runner to the file that sets variables"    
+    description: "Random number"  
 runs:
   using: 'docker'
   image: 'dockerfile'
   args:
     - ${{ inputs.who-to-greet }}
-    - ${{ github.event-path }}
-    - ${{ github.path }}
