@@ -1,3 +1,7 @@
+#!/bin/bash
+
+git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
 set_output() {
   local -r key="$1";
   local -r value="$2";
