@@ -1,4 +1,5 @@
 #!/bin/bash
+
 git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
 set_output() {
