@@ -4,8 +4,8 @@ ADD main.sh /usr/bin/main.sh
 
 RUN chmod +x /usr/bin/main.sh
 
-RUN mkdir /app
+RUN mkdir /hello_composite_action
 
-WORKDIR /app
+WORKDIR /hello_composite_action
 
 ENTRYPOINT ["/usr/bin/main.sh"]

@@ -1,7 +1,11 @@
 FROM ubuntu:18.04
 
-COPY . /usr/bin/goodbye_composite_action
+ADD main.sh /usr/bin/main.sh
 
-RUN chmod +x /usr/bin/goodbye_composite_action/main.sh
+RUN chmod +x /usr/bin/main.sh
 
-ENTRYPOINT ["./usr/bin/goodbye_composite_action/main.sh"]
+RUN mkdir /goodbye_composite_action
+
+WORKDIR /goodbye_composite_action
+
+ENTRYPOINT ["/usr/bin/main.sh"]
